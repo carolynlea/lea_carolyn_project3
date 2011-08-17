@@ -145,6 +145,55 @@ function getItems(){
 	}
 };
 /*
+function validateForm(){
+	var x=document.forms[0]['dungeon_name'].value
+	if (x==null || x=="")
+  	{
+		document.getElementById('dungeon_name').style.border='1px solid #990000';
+  		alert('Please add a dungeon name.');
+  		return false;
+	}
+}
+*/
+function validateForm(){
+	var getDungeonName = document.forms[0]["dungeon_name"].value;
+	if (getDungeonName == ""){
+		document.getElementById("dungeon_name").style.border="1px solid #990000";
+		var encourage = prompt("You did not include a Dungeon Name.", "");
+		if(encourage !=null && encourage != ""){
+			document.forms[0]["dungeon_name"].value = encourage;
+		}
+		return false;
+	}else{
+		document.getElementById("dungeon_name").style.border = "1px solid #37382C";
+	}
+	alert ("Form Submitted!");
+};
+/*	var getDungeonType = document.forms[0]["dungeon_type"].value;
+	if (getDungeonType == ""){
+		alert("Please select a dungeon type.");
+		document.getElementById("dungeon_type").style.border = "1px solid #990000";
+		return false;
+	}else{
+		document.getElementById("dungeon_type").style.border = "1px solid #37382C";
+}
+	alert ("Form Submitted!");
+};
+*/
+/*	var getLocation = document.forms[0]["location"].value;
+	if (getLocation == ""){
+		alert("Please select a location.");
+		document.getElementById("location").style.border = "1px solid #990000";
+		return false;
+	}else{
+		document.getElementById("location").style.border = "1px solid #37382C";
+	}
+	alert ("Form Submitted!");
+};
+	
+};
+*/
+/*
 document.getElementById('main').style.display="none";
 //document.getElementById('clear').style.display="block";
 var getListdiv=document.getElementById("dungeonList");
@@ -176,6 +225,7 @@ function clearlocal(){
 	localStorage.clear();
 	return false;
 };
+
 
 
 
