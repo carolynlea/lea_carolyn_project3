@@ -72,22 +72,7 @@ function removeAll(list){
 
 
 
-/*
-var clearLink = document.getElementById('clear');
-var anchorTags = clearLink.getElementsByTagName('a');
 
-function mouseHover(){
-	for (var i = 0, j = anchorTags.length; i < j; i++){
-		anchorTags[i].style.color = "#37382C";
-	}
-};
-
-function mouseOut(){
-	for (var i = 0, j = anchorTags.length; i < j; i++){
-		anchorTags[i].style.color = "#990000";
-	}
-};
-*/
 function storeItems(id){
 	var dungeon_name = document.getElementById('dungeon_name').value;
 	var dungeon_type = document.getElementById('dungeon_type').value;
@@ -109,10 +94,25 @@ function storeItems(id){
 	localStorage.setItem('appNoLootHere', no_loot_here);
 	localStorage.setItem('appNotes', notes);
 	localStorage.setItem('appSelTwo', selTwo);
-	//document.getElementById('clear').style.display = "block";
+	document.getElementById('clear').style.display = "block";
 	document.getElementById('main').style.display = "none";
 	
 	
+};
+
+function validateForm(){
+	var getDungeonName = document.forms[0]["dungeon_name"].value;
+	if (getDungeonName == ""){
+		document.getElementById("dungeon_name").style.border="1px solid #990000";
+		var encourage = prompt("You did not include a Dungeon Name.", "");
+		if(encourage !=null && encourage != ""){
+			document.forms[0]["dungeon_name"].value = encourage;
+		}
+		return false;
+	}else{
+		document.getElementById("dungeon_name").style.border = "1px solid #37382C";
+	}
+	//alert ("Form Submitted!");
 };
 
 function getItems(){
@@ -144,82 +144,12 @@ function getItems(){
 		alert(viewForm);
 	}
 };
-/*
-function validateForm(){
-	var x=document.forms[0]['dungeon_name'].value
-	if (x==null || x=="")
-  	{
-		document.getElementById('dungeon_name').style.border='1px solid #990000';
-  		alert('Please add a dungeon name.');
-  		return false;
-	}
-}
-*/
-function validateForm(){
-	var getDungeonName = document.forms[0]["dungeon_name"].value;
-	if (getDungeonName == ""){
-		document.getElementById("dungeon_name").style.border="1px solid #990000";
-		var encourage = prompt("You did not include a Dungeon Name.", "");
-		if(encourage !=null && encourage != ""){
-			document.forms[0]["dungeon_name"].value = encourage;
-		}
-		return false;
-	}else{
-		document.getElementById("dungeon_name").style.border = "1px solid #37382C";
-	}
-	alert ("Form Submitted!");
-};
-/*	var getDungeonType = document.forms[0]["dungeon_type"].value;
-	if (getDungeonType == ""){
-		alert("Please select a dungeon type.");
-		document.getElementById("dungeon_type").style.border = "1px solid #990000";
-		return false;
-	}else{
-		document.getElementById("dungeon_type").style.border = "1px solid #37382C";
-}
-	alert ("Form Submitted!");
-};
-*/
-/*	var getLocation = document.forms[0]["location"].value;
-	if (getLocation == ""){
-		alert("Please select a location.");
-		document.getElementById("location").style.border = "1px solid #990000";
-		return false;
-	}else{
-		document.getElementById("location").style.border = "1px solid #37382C";
-	}
-	alert ("Form Submitted!");
-};
-	
-};
-*/
-/*
-document.getElementById('main').style.display="none";
-//document.getElementById('clear').style.display="block";
-var getListdiv=document.getElementById("dungeonList");
-for (var i=0, j=viewForm.length; i<j;i++){
-	var newParas = document.createElement("p");
-	var itemTxt = document.createTextNode(viewForm[i]);
-	new Paras.appendChild(itemTxt);
-	getListdiv.appendChild(newParas);
-	anchorTags[0].style.color="#990000";
-}else{
-	var clearLink = document.getElementById("clear");
-	var anchorTags = clearLink.getElementsByTagName("a");
-}
 
-function mouseHover(){
-	for (var i = 0, j = anchorTags.length; i < j; i++){
-		anchorTags[i].style.color = "#37382C";
-	}
-};
 
-function mouseOut(){
-	for (var i = 0, j = anchorTags.length; i < j; i++){
-		anchorTags[i].style.color = "#990000";
-	}
+
+function showList(){
+	var showEachItem = document.forms
 };
-*/
 
 function clearlocal(){
 	localStorage.clear();

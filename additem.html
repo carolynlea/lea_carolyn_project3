@@ -27,9 +27,10 @@
 			<h1>Add Dungeon</h1>  <!--Required h1 title of my page.-->
 		</header>
 		<div id = "main">
-		<form action="#" onSubmit = "return validateForm();" method = "post">  <!--Required form tag.-->
+		<form action="#" onSubmit = "return validateForm(); return getItems();">  <!--Required form tag.-->
 			<fieldset>  <!--Basic information about each Dungeon.-->
 				<legend>Dungeon</legend>
+				
 				<label for="dungeon_name">Dungeon Name</label>  <!--Now to include required text field.-->
 				<input id="dungeon_name" name="dungeon_name" type="text" placeholder="e.g. Fort Metropolis" required/><br/>
 					
@@ -113,9 +114,10 @@
 
 		</form>
 		</div>
-			<!--<p id = "clear"><a onmouseover = "mouseHover();" onmouseout = "mouseOut();" href = "#" onclick = "clearlocal(); location.reload();">clear local storage</a></p>-->
+			
 			
 			<p id = "clear"><a href = "#" onclick = "clearlocal(); location.reload();">clear local storage</a></p>
+			
 		
 	</body>
 </html>
