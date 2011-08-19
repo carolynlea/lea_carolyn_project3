@@ -26,8 +26,8 @@
 		<header>
 			<h1>Add Dungeon</h1>  <!--Required h1 title of my page.-->
 		</header>
-		<div id = "main">
-		<form action="#" onSubmit = "return validateForm(); return getItems();">  <!--Required form tag.-->
+		<div id = "main" name = "main" style = "display:block">
+		<form action="#" onSubmit = "return validateForm();">  <!--Required form tag.-->
 			<fieldset>  <!--Basic information about each Dungeon.-->
 				<legend>Dungeon</legend>
 				
@@ -107,7 +107,11 @@
 			
 			<fieldset>
 				<legend>Submit</legend>
-				<button type="submit" id = "submit">Add Dungeon</button>  <!--Required submit button.-->
+				<button type = "submit" id = "submit">Add Dungeon</button>
+				  <!--Required submit button.-->
+					
+				<a href="javascript:showIt('none')"></a>
+					
 			</fieldset>
 			
 <!--All the ending tags.-->
@@ -117,7 +121,7 @@
 			
 			
 			<p id = "clear"><a href = "#" onclick = "clearlocal(); location.reload();">clear local storage</a></p>
-			
+		
 		
 	</body>
 </html>

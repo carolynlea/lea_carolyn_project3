@@ -94,8 +94,7 @@ function storeItems(id){
 	localStorage.setItem('appNoLootHere', no_loot_here);
 	localStorage.setItem('appNotes', notes);
 	localStorage.setItem('appSelTwo', selTwo);
-	document.getElementById('clear').style.display = "block";
-	document.getElementById('main').style.display = "none";
+	
 	
 	
 };
@@ -112,7 +111,8 @@ function validateForm(){
 	}else{
 		document.getElementById("dungeon_name").style.border = "1px solid #37382C";
 	}
-	//alert ("Form Submitted!");
+	alert ("Form Submitted!");
+	
 };
 
 function getItems(){
@@ -141,15 +141,31 @@ function getItems(){
 		notes
 		
 		];
-		alert(viewForm);
+			document.getElementById('main').style.display = "none";
+			document.getElementById('clear').style.display = "block";
+			var getListdiv = document.getElementById("main");
+			for (var i = 0, j = viewForm.length; i<j; i++){
+				var newParas = document.createElement("p");
+				var itemTxt = document.createTextNode(viewForm[i]);
+				newParas.appendChild(itemTxt);
+				getListdiv.appendChild(newParas);
+				anchorTags[0].style.color = #990000;
+			}else{
+				var clearLink = document.getElementById("clear");
+				var anchorTags = clearLink.getElementsByTagName("a");
+			}
+	//alert(viewForm);
 	}
 };
 
+function showIt(s) {
+  var see = document.getElementById('main');
+  see.style.display = s;
+}
 
 
-function showList(){
-	var showEachItem = document.forms
-};
+
+
 
 function clearlocal(){
 	localStorage.clear();
